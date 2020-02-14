@@ -19,9 +19,21 @@ def letter_frequency(word):
     return counts
 
 
+# Count word frequency
+def word_frequency(paragraph):
+    paragraph = str(paragraph)
+    counts = dict()
+    word_list = paragraph.split()
+    for word in word_list:
+        counts[word] = counts.get(word, 0) + 1
+    return counts
+
+
 def main():
     word = str("programming")
     print(letter_frequency(word))
+    paragraph = "programming Kevin"
+    print(word_frequency(paragraph))
 
 
 main()
