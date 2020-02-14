@@ -29,11 +29,24 @@ def word_frequency(paragraph):
     return counts
 
 
+# Find the common word
+def common_word(counts):
+    big_count = None
+    big_word = None
+    counts = dict(counts)
+    for word, count in counts.items():
+        if big_count is None or count > big_count:
+            big_word = word
+            big_count = count
+    print(big_word, big_count)
+
+
 def main():
     word = str("programming")
     print(letter_frequency(word))
-    paragraph = "programming Kevin"
+    paragraph = "programming Kevin Kevin"
     print(word_frequency(paragraph))
+    common_word(word_frequency(paragraph))
 
 
 main()
